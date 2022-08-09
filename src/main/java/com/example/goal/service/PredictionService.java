@@ -3,6 +3,7 @@ package com.example.goal.service;
 import com.example.goal.dao.PredictionDao;
 import com.example.goal.model.Prediction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
@@ -14,7 +15,7 @@ public class PredictionService {
     private final PredictionDao predictionDao;
 
     @Autowired
-    public PredictionService(PredictionDao predictionDao) {
+    public PredictionService(@Qualifier("PredictionRepository") PredictionDao predictionDao) {
         this.predictionDao = predictionDao;
     }
 
